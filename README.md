@@ -1,7 +1,8 @@
 ## Docker
 ```bash
 # build docker
-bash docker/build.sh
+cd docker
+bash build.sh
 
 # run docker
 bash run_docker.sh
