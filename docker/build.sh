@@ -1,2 +1,5 @@
 IMAGE_NAME=ipex:driver602
-docker build -t ${IMAGE_NAME} .
+docker build --build-arg http_proxy=$http_proxy \
+                 --build-arg https_proxy=$https_proxy \
+                 --build-arg no_proxy=$no_proxy \
+                 -t ${IMAGE_NAME} .
