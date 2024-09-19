@@ -24,17 +24,18 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf  /var/lib/apt/lists/*
 
-RUN https_proxy=$https_proxy wget -qO - https://repositories.intel.com/graphics/intel-graphics.key | \
-    gpg --dearmor --output /usr/share/keyrings/intel-graphics.gpg
-RUN echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/graphics/ubuntu jammy flex' | \
-    tee  /etc/apt/sources.list.d/intel.gpu.jammy.list
+RUN https_proxy=$https_proxy wget -qO - https://repositories.intel.com/gpu/intel-graphics.key | \
+    gpg --dearmor --yes --output /usr/share/keyrings/intel-graphics.gpg
+RUN echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu jammy unified' | \
+    tee  /etc/apt/sources.list.d/intel-gpu-jammy.list
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends --fix-missing \
-    intel-opencl-icd=23.05.25593.18-601~20.04\
-    intel-level-zero-gpu=1.3.25593.18-601~20.04 \
-    level-zero=1.9.4+i589~20.04 \
-    level-zero-dev=1.9.4+i589~20.04 && \
+    intel-opencl-icd=24.26.30049.10-950~22.04\
+    libze1=1.17.6-950~22.04 \
+    libze-dev=1.17.6-950~22.04 \
+    intel-level-zero-gpu=1.3.30049.10-950~22.04 \
+    xpu-smi=1.2.35-59~22.04
     apt-get clean && \
     rm -rf  /var/lib/apt/lists/*
 

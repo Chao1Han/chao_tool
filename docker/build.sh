@@ -1,5 +1,5 @@
-IMAGE_NAME=ipex:driver602
+IMAGE_NAME=ipex:driver950
 docker build --build-arg http_proxy=$http_proxy \
-                 --build-arg https_proxy=$https_proxy \
-                 --build-arg no_proxy=$no_proxy \
-                 -t ${IMAGE_NAME} .
+             --build-arg https_proxy=$https_proxy \
+             --build-arg no_proxy=$no_proxy \
+             -t ${IMAGE_NAME} .
