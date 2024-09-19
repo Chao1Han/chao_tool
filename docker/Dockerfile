@@ -14,6 +14,7 @@ RUN apt-get update && \
     ca-certificates \
     clinfo \
     curl \
+    cmake \
     git \
     gnupg2 \
     gpg-agent \
