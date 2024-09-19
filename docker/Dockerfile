@@ -35,7 +35,7 @@ RUN apt-get update && \
     libze1=1.17.6-950~22.04 \
     libze-dev=1.17.6-950~22.04 \
     intel-level-zero-gpu=1.3.30049.10-950~22.04 \
-    xpu-smi=1.2.35-59~22.04
+    xpu-smi=1.2.35-59~22.04 && \
     apt-get clean && \
     rm -rf  /var/lib/apt/lists/*
 

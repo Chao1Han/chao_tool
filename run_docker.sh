@@ -1,4 +1,4 @@
-IMAGE_NAME=ipex:driver602
+IMAGE_NAME=ipex:driver950
 VIDEO=$(getent group video | sed -E 's,^video:[^:]*:([^:]*):.*$,\1,')
 RENDER=$(getent group render | sed -E 's,^render:[^:]*:([^:]*):.*$,\1,')
 test -z "$RENDER" || RENDER_GROUP="--group-add ${RENDER}"
